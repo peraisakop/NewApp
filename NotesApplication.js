@@ -57,9 +57,9 @@ class NotesApplication {
    	search(search_text) {
    		var searchReturnArray = [];
    		for(var f = 0; f < this.note.length; f++) {
-   			if(this.note.charAt(i) === search_text)
+   			if(this.note.charAt(f) === search_text)
 				{
-					searchReturnArray.push(this.note[i]);
+					searchReturnArray.push(this.note[f]);
 				}
 
    		}
