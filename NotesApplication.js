@@ -6,7 +6,8 @@ class NotesApplication {
     }
 
     //created the create function
-    create(note_content) {
+    create(note_content)
+    {
     	/** create(note_content) - This function takes 
     	  * the note content as the parameter and adds 
     	  * it to the notes list of the object.
@@ -29,7 +30,8 @@ class NotesApplication {
 		*	By Author [author] 
 		*/
 		
-    	for(var i = 0; i < this.note.length; i++) {
+    	for(var i = 0; i < this.note.length; i++) 
+    	{
     		console.log("Note ID: " + i  + "\n"+
     						    this.note[i] +
     							" \nBy Author: "+ this.author+"\n"
@@ -73,13 +75,13 @@ class NotesApplication {
    		var countNoteFound = 0;
    		console.log("Showing results for search "+ " '"+search_text+"' \n");
    		for(var f = 0; f < this.note.length; f++) {
-   			if(this.note[f].match(search_text))
-				{
-					console.log("Note ID: " + f  + "\n"+
-    						    this.note[f] +
-    							" \nBy Author: "+ this.author+"\n"
-    					);
-				}
+   		if(this.note[f].match(search_text))
+			{
+				console.log("Note ID: " + f  + "\n"+
+						    this.note[f] +
+							" \nBy Author: "+ this.author+"\n"
+					);
+			}
    		}
    	}
 }
