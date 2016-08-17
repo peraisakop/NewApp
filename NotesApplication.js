@@ -34,7 +34,7 @@ class NotesApplication {
 
 		*/
 
-    	for(var i = 0; i < note.length; i++) {
+    	for(var i = 0; i < this.note.length; i++) {
     		console.log("Note ID: " + i  +
     					" Content: " + this.note.note_content[i] +
     					" By Author: "+ this.author
@@ -48,7 +48,7 @@ class NotesApplication {
     	  * in the notes list and returns the content of that note as a string.
     	  */
 
-    	  var stringReturn = ;
+    	  var stringReturn = "" ;
 
     	  for (var k = 0; k < note.length; k++) {
     	  	  if (this.note[i] === note_id) {
@@ -57,6 +57,20 @@ class NotesApplication {
 
     	  	  return stringReturn;
     	  }
+
+   	search(search_text) {
+   		var retArray = [];
+   		for(var f = 0; f < this.note.length; f++) {
+   			if(this.note.charAt(i) === search_text)
+				{
+					retArray.push(this.note.note_content[i]);
+
+				}
+
+   		}
+
+   		return retArray;
+   	}
 
 
     }
