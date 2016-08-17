@@ -5,14 +5,12 @@ class NotesApplication {
         this.note = [];
     }
 
-
     //created the create function
     create(note_content) {
     	/** create(note_content) - This function takes 
     	  * the note content as the parameter and adds 
     	  * it to the notes list of the object.
     	  */
-
     	this.note.push(note_content);
     }
 
@@ -26,14 +24,11 @@ class NotesApplication {
     	*	the respective index of each of the items in the 
     	*	list, the NOTE_CONTENT represent 
     	*	the note content and the author represents the note author.
-	
 		*	Note ID: [note_id]
 		*	[NOTE_CONTENT]
-
 		*	By Author [author] 
-
 		*/
-
+		
     	for(var i = 0; i < this.note.length; i++) {
     		console.log("Note ID: " + i  +
     					" Content: " + this.note[i] +
@@ -46,33 +41,28 @@ class NotesApplication {
     	/** get(note_id) - This function takes a 
     	  * note_id which refers to the index of the note 
     	  * in the notes list and returns the content of that note as a string.
+    	  * note check if the int entered is available on the array;
     	  */
-
-    	  var stringReturn = "" ;
-
-    	  for (var k = 0; k < note.length; k++) {
-    	  	  if (this.note[i] === note_id) {
-    	  	  	stringReturn  = this.note[i];
+			
+    	  var getReturnString = "" ;
+    	  for (var k = 0; k < this.note.length; k++) {
+    	  	  if (k === note_id) {
+    	  	  	getReturnString  += this.note[k];
     	  	  }
-
-    	  	  return stringReturn;
+    	  	  return getReturnString;
     	  }
     	  
     }
 
    	search(search_text) {
-   		var retArray = [];
+   		var searchReturnArray = [];
    		for(var f = 0; f < this.note.length; f++) {
    			if(this.note.charAt(i) === search_text)
 				{
-					retArray.push(this.note[i]);
-
+					searchReturnArray.push(this.note[i]);
 				}
 
    		}
-
-   		return retArray;
+   		return searchReturnArray;
    	}
-         
-     
 }
