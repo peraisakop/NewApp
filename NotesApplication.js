@@ -65,6 +65,10 @@ class NotesApplication {
     }
 
    	search(search_text) {
+   		/**search(search_text) - This function take a search string,
+   		 * search_text and returns all the notes with that text within
+   		 * it in the following format
+   		 */ 
    		var searchReturnArray = [];
    		var countNoteFound = 0;
    		console.log("Showing results for search "+ " '"+search_text+"' \n");
@@ -79,4 +83,3 @@ class NotesApplication {
    		}
    	}
 }
-
