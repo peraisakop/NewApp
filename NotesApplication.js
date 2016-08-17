@@ -65,11 +65,10 @@ class NotesApplication {
    	search(search_text) {
    		var searchReturnArray = [];
    		for(var f = 0; f < this.note.length; f++) {
-   			if(this.note.charAt(f) === search_text)
+   			if(this.note[f].indexOf(search_text) !== 1)
 				{
 					searchReturnArray.push(this.note[f]);
 				}
-
    		}
    		return searchReturnArray;
    	}
