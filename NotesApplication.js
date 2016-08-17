@@ -30,9 +30,9 @@ class NotesApplication {
 		*/
 		
     	for(var i = 0; i < this.note.length; i++) {
-    		console.log("Note ID: " + i  +
-    					" Content: " + this.note[i] +
-    					" By Author: "+ this.author
+    		console.log("Note ID: " + i  + "\n"+
+    						    this.note[i] +
+    							" \nBy Author: "+ this.author+"\n"
     					);
     	}
     }
@@ -47,6 +47,7 @@ class NotesApplication {
     	  var getReturnString = "" ;
     	  for (var k = 0; k < this.note.length; k++) {
     	  	  if (k === note_id) {
+    	  	  	console.log()
     	  	  	getReturnString  += this.note[k];
     	  	  }	  
     	  }
@@ -57,6 +58,7 @@ class NotesApplication {
 		   		}
    	   	  else
 		   		{
+		   			
 		   			return getReturnString;
 		   		}
     	  
@@ -65,20 +67,16 @@ class NotesApplication {
    	search(search_text) {
    		var searchReturnArray = [];
    		var countNoteFound = 0;
+   		console.log("Showing results for search "+ " '"+search_text+"' \n");
    		for(var f = 0; f < this.note.length; f++) {
    			if(this.note[f].match(search_text))
 				{
-					searchReturnArray.push(this.note[f]);
-					countNoteFound++;
+					console.log("Note ID: " + f  + "\n"+
+    						    this.note[f] +
+    							" \nBy Author: "+ this.author+"\n"
+    					);
 				}
    		}
-   		if(countNoteFound > 0)
-		   		{
-		   			return searchReturnArray;
-		   		}
-   	   	else
-		   		{
-		   			return "No Note Found";
-		   		} 
    	}
 }
+
