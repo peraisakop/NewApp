@@ -95,10 +95,7 @@ class NotesApplication {
    		{
    		if(d === note_id)
 			{
-				console.log("Note ID: " + d  + "\n"+
-						    this.note[d] +
-							" \nBy Author: "+ this.author+"\n"
-					);
+				this.note.splice(d,1);
 			}
    		}
    	}
