@@ -55,7 +55,7 @@ class NotesApplication {
 		   		{
 		   			return "No Note"
 		   		}
-   	   	 else
+   	   	  else
 		   		{
 		   			return getReturnString;
 		   		}
@@ -64,12 +64,21 @@ class NotesApplication {
 
    	search(search_text) {
    		var searchReturnArray = [];
+   		var countNoteFound = 0;
    		for(var f = 0; f < this.note.length; f++) {
-   			if(this.note[f].indexOf(search_text) !== 1)
+   			if(this.note[f].match(search_text))
 				{
 					searchReturnArray.push(this.note[f]);
+					countNoteFound++;
 				}
    		}
-   		return searchReturnArray;
+   		if(countNoteFound > 0)
+		   		{
+		   			return searchReturnArray;
+		   		}
+   	   	else
+		   		{
+		   			return "No Note Found";
+		   		} 
    	}
 }
