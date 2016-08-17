@@ -93,7 +93,7 @@ class NotesApplication {
    		 */ 
    		for(var d = 0; d < this.note.length; d++) 
    		{
-   		if(this.note[d] === note_id)
+   		if(d === note_id)
 			{
 				console.log("Note ID: " + d  + "\n"+
 						    this.note[d] +
@@ -102,4 +102,21 @@ class NotesApplication {
 			}
    		}
    	}
+   	
+   	edit(note_id, new_content) {
+   		/** edit(note_id, new_content) - This function 
+   		 * replaces the content in the note at note_id 
+   		 * with new_content.
+   		 */
+ 
+   		for(var e = 0; e < this.note.length; e++) 
+   		{
+   		if(e === note_id)
+			{
+				this.note.push(new_content)
+			}
+   		}
+   	}
+   	
+   	
 }
