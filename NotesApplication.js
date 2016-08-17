@@ -47,11 +47,12 @@ class NotesApplication {
     	  */
     	  
     	  var getReturnString = "" ;
-    	  for (var k = 0; k < this.note.length; k++) {
-    	  	  if (k === note_id) {
-    	  	  	console.log()
-    	  	  	getReturnString  += this.note[k];
-    	  	  }	  
+    	  for (var k = 0; k < this.note.length; k++) 
+    	  {
+		  	  if (k === note_id) {
+		  	  	console.log()
+		  	  	getReturnString  += this.note[k];
+		  	  }	  
     	  }
     	  
     	  if(getReturnString === '')
@@ -74,11 +75,28 @@ class NotesApplication {
    		var searchReturnArray = [];
    		var countNoteFound = 0;
    		console.log("Showing results for search "+ " '"+search_text+"' \n");
-   		for(var f = 0; f < this.note.length; f++) {
+   		for(var f = 0; f < this.note.length; f++) 
+   		{
    		if(this.note[f].match(search_text))
 			{
 				console.log("Note ID: " + f  + "\n"+
 						    this.note[f] +
+							" \nBy Author: "+ this.author+"\n"
+					);
+			}
+   		}
+   	}
+   	
+   	delete(note_id) {
+   		/**delete(note_id) - This function deletes
+   		 * the note at the index note_id of the notes list. 
+   		 */ 
+   		for(var d = 0; d < this.note.length; d++) 
+   		{
+   		if(this.note[d] === note_id)
+			{
+				console.log("Note ID: " + d  + "\n"+
+						    this.note[d] +
 							" \nBy Author: "+ this.author+"\n"
 					);
 			}
