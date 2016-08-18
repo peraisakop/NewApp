@@ -44,7 +44,7 @@ module.exports = function NotesApplication(author) {
         	  * in the notes list and returns the content of that note as a string.
         	  * note check if the int entered is available on the array;
         	  */
-
+ 
         	  var getReturnString = "" ;
         	  for (var k = 0; k < this.note.length; k++)
         	  {
