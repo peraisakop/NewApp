@@ -4,12 +4,6 @@ module.exports = function NotesApplication(author) {
         this.author = author;
         this.note = [];
 
-        /** New Function added to the class
-         * to check if author was Defined
-         */
-        this.checkAuthor = function(){
-          if(this.author === '') {return "Author Needs To Be Defined";}
-        }
 
         this.create = function (note_content){
         	/** create(note_content) - This function takes
