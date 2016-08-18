@@ -1,13 +1,11 @@
-class NotesApplication {
+function NotesApplication(author) {
 	//constructor with author and note
-	constructor (author) {
+
         this.author = author;
         this.note = [];
-    }
 
     //created the create function
-    create(note_content)
-    {
+    this.create = function(note_content){
     	/** create(note_content) - This function takes
     	  * the note content as the parameter and adds
     	  * it to the notes list of the object.
