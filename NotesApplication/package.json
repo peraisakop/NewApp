@@ -1,0 +1,21 @@
+{
+  "name": "notesapplication",
+  "version": "1.0.0",
+  "description": "This is a Note Listing Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "peraisakop"
+  },
+  "keywords": [
+    "Notes",
+    "List",
+    "Author",
+    "Note_Id"
+  ],
+  "author": "Peter Adepoju",
+  "license": "MIT"
+}
