@@ -54,9 +54,14 @@ describe("NotesApplication", function (){
       expect(note.get("Hello")).to.be.equal("note_id Input Can't be Integer");
     });
 
-    /*11.
-    it("should reject String values",function(){
-      expect(note.delete("Hello")).to.be.equal("note_id Input Can't be String");
-    });*/
+    //12.
+    it("note_id for delete Cannot be empty",function(){
+      expect(note.delete()).to.be.equal("note_id for Delete must have a value");
+    });
+
+    //10.
+    it("delete function should reject String values",function(){
+      expect(note.delete("hey")).to.be.equal("note_id Input for Delete Can't be Integer");
+    });
 
 });

@@ -28,7 +28,6 @@ module.exports = function NotesApplication(author) {
     		*	[NOTE_CONTENT]
     		*	By Author [author]
     		*/
-
         	for(var i = 0; i < this.note.length; i++)
         	{
         		console.log("Note ID: " + i  + "\n"+
@@ -87,7 +86,6 @@ module.exports = function NotesApplication(author) {
                   return "Search_Text Input Can't be Integer";
 
            }
-
            if(search_text){
                   var searchReturnArray = [];
               		var countNoteFound = 0;
@@ -103,15 +101,21 @@ module.exports = function NotesApplication(author) {
                  			}
               		}
            }
-
-
-
        	};
 
         this.delete = function (note_id) {
        		/**delete(note_id) - This function deletes
        		 * the note at the index note_id of the notes list.
        		 */
+           if(typeof note_id === 'string'){
+                  return "note_id Input for Delete Can't be Integer";
+
+           }
+
+           if(!note_id){
+                  return "note_id for Delete must have a value";
+
+           }
 
            if(typeof note_id !== 'string'){
                   return "Search_Text Input Can't be Integer";
@@ -126,10 +130,12 @@ module.exports = function NotesApplication(author) {
                				this.note.splice(d);
                			}
               }
-          }
 
 
-        };
+
+        }
+
+      };
 
 
 
