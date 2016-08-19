@@ -50,8 +50,8 @@ describe("NotesApplication", function (){
     });
 
     //10.
-    it("should reject String values",function(){
-      expect(note.get("Hello")).to.be.equal("note_id Input Must be Integer");
+    it("get function should reject String values",function(){
+      expect(note.get("Hello")).to.be.equal("note_id Input Can't be Integer");
     });
 
     /*11.
