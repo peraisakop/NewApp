@@ -44,25 +44,37 @@ module.exports = function NotesApplication(author) {
         	  * in the notes list and returns the content of that note as a string.
         	  * note check if the int entered is available on the array;
         	  */
- 
-        	  var getReturnString = "" ;
-        	  for (var k = 0; k < this.note.length; k++)
-        	  {
-    		  	  if (k === note_id) {
-    		  	  	console.log()
-    		  	  	getReturnString  += this.note[k];
-    		  	  }
-        	  }
+            if(typeof note_id !== 'string'){
+                   return "note_id Input Must be Integer";
 
-        	  if(getReturnString === '')
-    		   		{
-    		   			return "No Note"
-    		   		}
-       	   	  else
-    		   		{
+            }
 
-    		   			return getReturnString;
-    		   		}
+            if(!note_id){
+                   return "note_id must have a value";
+
+            }
+
+            if(note_id){
+            	  var getReturnString = "" ;
+            	  for (var k = 0; k < this.note.length; k++)
+            	  {
+        		  	  if (k === note_id) {
+        		  	  	console.log()
+        		  	  	getReturnString  += this.note[k];
+        		  	  }
+            	  }
+
+            	  if(getReturnString === '')
+        		   		{
+        		   			return "No Note"
+        		   		}
+           	   	  else
+        		   		{
+
+        		   			return getReturnString;
+        		   		}
+              }
+
 
         };
 
@@ -71,33 +83,56 @@ module.exports = function NotesApplication(author) {
        		 * search_text and returns all the notes with that text within
        		 * it in the following format
        		 */
-       		var searchReturnArray = [];
-       		var countNoteFound = 0;
-       		console.log("Showing results for search "+ " '"+search_text+"' \n");
-       		for(var f = 0; f < this.note.length; f++)
-       		{
-       		if(this.note[f].match(search_text))
-    			{
-    				console.log("Note ID: " + f  + "\n"+
-    						    this.note[f] +
-    							" \nBy Author: "+ this.author+"\n"
-    					);
-    			}
-       		}
+
+           if(typeof search_text !== 'string'){
+                  return "Search_Text Input Can't be Integer";
+
+           }
+
+           if(search_text){
+                  var searchReturnArray = [];
+              		var countNoteFound = 0;
+              		console.log("Showing results for search "+ " '"+search_text+"' \n");
+              		for(var f = 0; f < this.note.length; f++)
+              		{
+              		if(this.note[f].match(search_text))
+                 			{
+                 				console.log("Note ID: " + f  + "\n"+
+                       						    this.note[f] +
+                       							" \nBy Author: "+ this.author+"\n"
+                 					         );
+                 			}
+              		}
+           }
+
+
+
        	};
 
         this.delete = function (note_id) {
        		/**delete(note_id) - This function deletes
        		 * the note at the index note_id of the notes list.
        		 */
-       		for(var d = 0; d < this.note.length; d++)
-       		{
-       		if(d === note_id)
-    			{
-    				this.note.splice(d,1);
-    			}
-       		}
-       	};
+
+           if(typeof note_id !== 'string'){
+                  return "Search_Text Input Can't be Integer";
+
+           }
+
+           if(note_id){
+             for(var d = 0; d < this.note.length; d++)
+          		{
+                  		if(d === note_id)
+               			{
+               				this.note.splice(d);
+               			}
+              }
+          }
+
+
+        };
+
+
 
    	  this.edit = function (note_id, new_content) {
    		/** edit(note_id, new_content) - This function
